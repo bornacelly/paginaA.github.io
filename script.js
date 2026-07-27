@@ -35,6 +35,6 @@ function irPaginaB(){
 const token=btoa(JSON.stringify(usuarioActual));
 
 window.location.href=
-"https://bornacelly.github.io/PaginaB/?token="+token;
+"https://bornacelly.github.io/paginaB/?token="+token;
 
 }
