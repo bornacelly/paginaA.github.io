@@ -32,9 +32,9 @@ document.getElementById("bienvenida").innerHTML=
 
 function irPaginaB(){
 
-const token=btoa(JSON.stringify(usuarioActual));
+    const token = btoa(JSON.stringify(usuarioActual));
 
-window.location.href=
-"https://bornacelly.github.io/paginaB/?token="+token;
+    window.location.href =
+    "https://bornacelly.github.io/paginaB.github.io/?token=" + token;
 
 }
