@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Página A</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página A - Acceso PQRS</title>
 </head>
 <body>
-
 <div class="contenedor">
 
-<h1>Registro</h1>
+  <!-- SECCIÓN REGISTRO/LOGIN DE PÁGINA A -->
+  <div id="registro">
+    <h1>Acceso al sistema</h1>
+    <input id="usuario"  type="text"     placeholder="Usuario o nombre">
+    <input id="password" type="password" placeholder="Contraseña">
+    <button class="btn-registrar" onclick="registrar()">Ingresar</button>
+  </div>
 
-<div id="registro">
+  <!-- MENÚ CON LOS 3 ROLES -->
+  <div id="menu">
+    <h2 id="bienvenida"></h2>
+    <p>Selecciona con qué rol deseas ingresar al sistema PQRS:</p>
 
-<input
-id="usuario"
-type="text"
-placeholder="Usuario">
+    <button class="btn-rol btn-usuario" onclick="irComoUsuario()">
+      <span class="icono">👤</span>
+      <span class="texto">
+        Ingresar como Usuario
+        <small>Crear y consultar mis PQRS</small>
+      </span>
+    </button>
 
-<input
-id="password"
-type="password"
-placeholder="Contraseña">
+    <button class="btn-rol btn-analista" onclick="irComoAnalistaDeNomina()">
+      <span class="icono">🔍</span>
+      <span class="texto">
+        Ingresar como Analista
+        <small>Panel de gestión – Nómina</small>
+      </span>
+    </button>
 
-<button onclick="registrar()">
-Registrarse
-</button>
+    <button class="btn-rol btn-encargado" onclick="irComoEncargado()">
+      <span class="icono">⚙️</span>
+      <span class="texto">
+        Ingresar como Encargado
+        <small>Panel de supervisión y cierre</small>
+      </span>
+    </button>
+  </div>
 
 </div>
-
-<div id="menu" style="display:none;">
-
-<h2 id="bienvenida"></h2>
-
-<button onclick="irPaginaB()">
-Ir a la Página B
-</button>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+<script src="script_paginaA.js"></script>
 </body>
 </html>
