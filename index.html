@@ -4,6 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página A - Acceso PQRS</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .contenedor {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 { text-align: center; color: #333; margin-bottom: 24px; }
+    h2 { color: #555; margin-bottom: 20px; }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .btn-registrar {
+      width: 100%;
+      padding: 12px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .btn-registrar:hover { background: #1565c0; }
+
+    /* Menú con los 3 botones */
+    #menu { display: none; }
+    #menu h2 { margin-bottom: 8px; }
+    #menu p { color: #777; font-size: 13px; margin-bottom: 20px; }
+
+    .btn-rol {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn-rol:hover { opacity: 0.88; }
+    .btn-usuario   { background: #ff9800; color: white; }
+    .btn-analista  { background: #4caf50; color: white; }
+    .btn-encargado { background: #2196f3; color: white; }
+
+    .btn-rol .icono { font-size: 20px; }
+    .btn-rol .texto { display: flex; flex-direction: column; text-align: left; }
+    .btn-rol .texto small { font-weight: normal; font-size: 11px; opacity: 0.85; }
+  </style>
 </head>
 <body>
 <div class="contenedor">
