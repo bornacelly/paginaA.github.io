@@ -22,8 +22,9 @@
       width: 100%;
       max-width: 400px;
     }
-    h1 { text-align: center; color: #333; margin-bottom: 24px; }
-    h2 { color: #555; margin-bottom: 20px; }
+    h1 { text-align: center; color: #333; margin-bottom: 24px; font-size: 22px; }
+    h2 { color: #444; margin-bottom: 6px; font-size: 18px; }
+    .subtitulo { color: #888; font-size: 13px; margin-bottom: 22px; }
     input {
       width: 100%;
       padding: 12px;
@@ -31,8 +32,10 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       font-size: 14px;
+      outline: none;
     }
-    .btn-registrar {
+    input:focus { border-color: #1976d2; }
+    .btn-ingresar {
       width: 100%;
       padding: 12px;
       background: #1976d2;
@@ -41,55 +44,57 @@
       border-radius: 8px;
       font-size: 15px;
       cursor: pointer;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
     }
-    .btn-registrar:hover { background: #1565c0; }
-
-    /* Menú con los 3 botones */
+    .btn-ingresar:hover { background: #1565c0; }
     #menu { display: none; }
-    #menu h2 { margin-bottom: 8px; }
-    #menu p { color: #777; font-size: 13px; margin-bottom: 20px; }
-
     .btn-rol {
       width: 100%;
-      padding: 14px;
+      padding: 14px 16px;
       border: none;
       border-radius: 8px;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: bold;
       cursor: pointer;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       transition: opacity 0.2s;
     }
-    .btn-rol:hover { opacity: 0.88; }
+    .btn-rol:hover { opacity: 0.85; }
     .btn-usuario   { background: #ff9800; color: white; }
     .btn-analista  { background: #4caf50; color: white; }
     .btn-encargado { background: #2196f3; color: white; }
-
-    .btn-rol .icono { font-size: 20px; }
+    .btn-rol .icono { font-size: 22px; }
     .btn-rol .texto { display: flex; flex-direction: column; text-align: left; }
     .btn-rol .texto small { font-weight: normal; font-size: 11px; opacity: 0.85; }
+    .error-msg {
+      color: #e53935;
+      font-size: 13px;
+      margin-bottom: 10px;
+      display: none;
+    }
   </style>
 </head>
 <body>
 <div class="contenedor">
-
-  <!-- SECCIÓN REGISTRO/LOGIN DE PÁGINA A -->
+ 
+  <!-- STEP 1: Login página A -->
   <div id="registro">
     <h1>Acceso al sistema</h1>
     <input id="usuario"  type="text"     placeholder="Usuario o nombre">
-    <input id="password" type="password" placeholder="Contraseña">
-    <button class="btn-registrar" onclick="registrar()">Ingresar</button>
+    <input id="password" type="password" placeholder="Contraseña"
+           onkeypress="if(event.key==='Enter') registrar()">
+    <p class="error-msg" id="errorMsg"></p>
+    <button class="btn-ingresar" onclick="registrar()">Ingresar</button>
   </div>
-
-  <!-- MENÚ CON LOS 3 ROLES -->
+ 
+  <!-- STEP 2: Elegir rol -->
   <div id="menu">
     <h2 id="bienvenida"></h2>
-    <p>Selecciona con qué rol deseas ingresar al sistema PQRS:</p>
-
+    <p class="subtitulo">Selecciona con qué rol deseas ingresar al sistema PQRS:</p>
+ 
     <button class="btn-rol btn-usuario" onclick="irComoUsuario()">
       <span class="icono">👤</span>
       <span class="texto">
@@ -97,15 +102,15 @@
         <small>Crear y consultar mis PQRS</small>
       </span>
     </button>
-
+ 
     <button class="btn-rol btn-analista" onclick="irComoAnalistaDeNomina()">
       <span class="icono">🔍</span>
       <span class="texto">
-        Ingresar como Analista
-        <small>Panel de gestión – Nómina</small>
+        Ingresar como Analista – Nómina
+        <small>Panel de gestión de solicitudes</small>
       </span>
     </button>
-
+ 
     <button class="btn-rol btn-encargado" onclick="irComoEncargado()">
       <span class="icono">⚙️</span>
       <span class="texto">
@@ -114,7 +119,8 @@
       </span>
     </button>
   </div>
-
+ 
+</div>
 </div>
 <script src="script.js"></script>
 </body>
